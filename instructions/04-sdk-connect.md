@@ -12,47 +12,47 @@ Neste laboratório, você se conectará a uma conta do Azure Cosmos DB for NoSQL
 
 ## Preparar seu ambiente de desenvolvimento
 
-Se você ainda não clonou o repositório de código de laboratório para **DP-420** no ambiente em que você está trabalhando neste laboratório, siga estas etapas para fazer isso. Caso contrário, abra a pasta clonada anteriormente no **Visual Studio Code**.
+Se você ainda não clonou o repositório de código do laboratório do **DP-420** para o ambiente no qual está trabalhando nesse laboratório, siga essas etapas para fazê-lo. Caso contrário, abra a pasta clonada anteriormente no **Visual Studio Code**.
 
 1. Inicie o **Visual Studio Code**.
 
     > &#128221; Se você ainda não se familiarizou com a interface do Visual Studio Code, confira o [Guia de introdução ao Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1. Abra a paleta de comandos e execute **Git: Clonar** para clonar o repositório GitHub ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` em uma pasta local de sua escolha.
+1. Abra a paleta de comandos e execute **Git: Clone** para clonar o repositório ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` do GitHub em uma pasta local de sua escolha.
 
-    > &#128161; Você pode usar o atalho de teclado **CTRL+SHIFT+P** para abrir a paleta de comandos.
+    > &#128161; Você pode usar o atalho de teclado **CTRL+SHIFT+P** para abrir a paleta de comandos.
 
 1. Depois que o repositório tiver sido clonado, abra a pasta local selecionada no **Visual Studio Code**.
 
 ## Criar uma conta do Azure Cosmos DB for NoSQL
 
-O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que dá suporte a várias APIs. Ao provisionar uma conta do Azure Cosmos DB pela primeira vez, você selecionará a qual das APIs deseja que a conta dê suporte (por exemplo, **API Mongo** ou **API NoSQL**). Depois que o provisionamento da conta do Azure Cosmos DB for NoSQL for concluído, você poderá recuperar o ponto de extremidade e a chave e usá-los para se conectar à conta do Azure Cosmos DB for NoSQL usando o SDK do Azure para .NET ou qualquer outro SDK de sua escolha.
+O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que dá suporte a várias APIs. Ao provisionar uma conta do Azure Cosmos DB pela primeira vez, você irá selecionar a qual API você quer que a conta dê suporte (por exemplo, a **API do Mongo** ou a **API do NoSQL**). Quando o provisionamento da conta do Azure Cosmos DB for NoSQL estiver concluído, você poderá recuperar o ponto de extremidade e a chave e usá-los para se conectar à conta do Azure Cosmos DB for NoSQL usando o SDK do Azure para .NET ou qualquer outro SDK de sua escolha.
 
-1. Em uma nova janela ou guia do navegador da Web, navegue até o portal do Azure (``portal.azure.com``).
+1. Em uma nova guia ou janela do navegador da web, navegue até o portal do Azure (``portal.azure.com``).
 
-1. Entre no portal usando as credenciais da Microsoft associadas à sua assinatura.
+1. Entre no portal usando as credenciais da Microsoft associadas à sua assinatura.
 
-1. Selecione **+ Criar um recurso **, pesquise por *Cosmos DB* e, em seguida, crie um novo recurso de conta do **Azure Cosmos DB for NoSQL** com as seguintes configurações, deixando todas as configurações restantes em seus valores padrão:
+1. Selecione **+ Criar um recurso**, procure *Cosmos DB* e, em seguida, crie um novo recurso de conta do **Azure Cosmos DB for NoSQL** com as seguintes configurações, deixando todas as configurações restantes com seus valores padrão:
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
     | **Assinatura** | *Sua assinatura existente do Azure* |
-    | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um* |
+    | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
     | **Localidade** | *Escolha qualquer região disponível* |
     | **Modo de capacidade** | *Taxa de transferência provisionada* |
     | **Aplicar Desconto na Camada Gratuita** | *Não aplicar* |
     | **Limitar a quantidade total de taxa de transferência que pode ser provisionada nesta conta** | *Desmarcado* |
 
-    > &#128221; Seus ambientes de laboratório podem ter restrições que impedem a criação de um grupo de recursos. Se esse for o caso, use o grupo de recursos pré-criado existente.
+    > &#128221; Seus ambientes de laboratório podem ter restrições que impedem a criação de um grupo de recursos. Se for esse o caso, use o grupo de recursos pré-criado existente.
 
-1. Aguarde a conclusão da tarefa de implantação antes de continuar com esta tarefa.
+1. Aguarde a conclusão da tarefa de implantação antes de continuar com essa tarefa.
 
-1. Acesse o recurso de conta do **Azure Cosmos DB** recém-criado e navegue até o painel **Chaves**.
+1. Vá para o recurso de conta do **Azure Cosmos DB** recém-criado e navegue até o painel **Chaves**.
 
-1. Este painel contém os detalhes da conexão e as credenciais necessárias para se conectar à conta do SDK. Especificamente:
+1. Esse painel contém os detalhes da conexão e as credenciais necessárias para se conectar à conta a partir do SDK. Especificamente:
 
-    1. Observe o campo **URI**. Você usará esse valor de **ponto de extremidade** posteriormente neste exercício.
+    1. Observe o campo **URI**. Você usará esse valor de **ponto de extremidade** posteriormente nesse exercício.
 
     1. Observe o campo **CHAVE PRIMÁRIA**. Você usará este valor de **chave** posteriormente neste exercício.
 
@@ -195,7 +195,7 @@ Agora que o código .NET para conexão com a conta do Azure Cosmos DB for NoSQL 
 
 1. Feche o terminal integrado.
 
-1. Fechar o **Visual Studio Code**.
+1. Feche o **Visual Studio Code**.
 
 [code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
 [docs.microsoft.com/dotnet/api/microsoft.azure.cosmos]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos

@@ -16,9 +16,9 @@ Os procedimentos armazenados são criados em JavaScript integrado à linguagem e
 
 1. Em uma nova janela ou guia do navegador da Web, navegue até o portal do Azure (``portal.azure.com``).
 
-1. Entre no portal usando as credenciais Microsoft associadas à sua assinatura.
+1. Entre no portal usando as credenciais da Microsoft associadas à sua assinatura.
 
-1. Selecione **+ Criar um recurso **, pesquise por *Cosmos DB* e, em seguida, crie um recurso de conta do **Azure Cosmos DB for NoSQL** com as seguintes configurações, deixando todas as configurações restantes em seus valores padrão:
+1. Selecione **+ Criar um recurso**, procure *Cosmos DB* e, em seguida, crie um novo recurso de conta do **Azure Cosmos DB for NoSQL** com as seguintes configurações, deixando todas as configurações restantes com seus valores padrão:
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
@@ -27,9 +27,9 @@ Os procedimentos armazenados são criados em JavaScript integrado à linguagem e
     | **Account Name** | *Insira um nome globalmente exclusivo* |
     | **Localidade** | *Escolha qualquer região disponível* |
     | **Modo de capacidade** | *Taxa de transferência provisionada* |
-    | **Aplicar Desconto na Camada Gratuita** | *Não aplicar* |
+    | **Aplicar Desconto na Camada Gratuita** | *Não Aplicar* |
 
-    > &#128221; Seus ambientes de laboratório podem ter restrições que impedem a criação de um novo grupo de recursos. Se esse for o caso, use o grupo de recursos pré-criado existente.
+    > &#128221; Seus ambientes de laboratório podem ter restrições impedindo que você crie um novo grupo de recursos. Se for esse o caso, use o grupo de recursos pré-criado existente.
 
 1. Aguarde a conclusão da tarefa de implantação antes de continuar esta tarefa.
 

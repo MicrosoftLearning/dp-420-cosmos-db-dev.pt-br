@@ -18,9 +18,9 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
 
 1. Em uma nova janela ou guia do navegador da Web, navegue até o portal do Azure (``portal.azure.com``).
 
-1. Entre no portal usando as credenciais Microsoft associadas à sua assinatura.
+1. Entre no portal usando as credenciais da Microsoft associadas à sua assinatura.
 
-1. Selecione **+ Criar um recurso **, pesquise por *Cosmos DB* e, em seguida, crie um recurso de conta do **Azure Cosmos DB for NoSQL** com as seguintes configurações, deixando todas as configurações restantes em seus valores padrão:
+1. Selecione **+ Criar um recurso**, procure *Cosmos DB* e, em seguida, crie um novo recurso de conta do **Azure Cosmos DB for NoSQL** com as seguintes configurações, deixando todas as configurações restantes com seus valores padrão:
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
@@ -32,23 +32,23 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
     | **Aplicar Desconto na Camada Gratuita** | *Não aplicar* |
     | **Limitar a quantidade total de taxa de transferência que pode ser provisionada nesta conta** | *Desmarcado* |
 
-    > &#128221; Seus ambientes de laboratório podem ter restrições que impedem a criação de um novo grupo de recursos. Se esse for o caso, use o grupo de recursos pré-criado existente.
+    > &#128221; Seus ambientes de laboratório podem ter restrições que impedem a criação de um grupo de recursos. Se for esse o caso, use o grupo de recursos pré-criado existente.
 
-1. Aguarde a conclusão da tarefa de implantação antes de continuar esta tarefa.
+1. Aguarde a conclusão da tarefa de implantação antes de continuar com essa tarefa.
 
-1. Acesse o recurso de conta do **Azure Cosmos DB** recém-criado e navegue até o painel **Chaves**.
+1. Vá para o recurso de conta do **Azure Cosmos DB** recém-criado e navegue até o painel **Chaves**.
 
-1. Este painel contém os detalhes da conexão e as credenciais necessárias para se conectar à conta do SDK. Especificamente:
+1. Esse painel contém os detalhes da conexão e as credenciais necessárias para se conectar à conta a partir do SDK. Especificamente:
 
-    1. Observe o campo **URI**. Você usará este valor de **ponto de extremidade** posteriormente neste exercício.
+    1. Observe o campo **URI**. Você usará esse valor de **ponto de extremidade** posteriormente nesse exercício.
 
-    1. Observe o campo **PRIMARY KEY**. Você usará este valor de **chave** posteriormente neste exercício.
+    1. Observe o campo **CHAVE PRIMÁRIA**. Você usará este valor de **chave** posteriormente neste exercício.
 
 1. Mantenha a guia do navegador aberta, pois retornaremos a ela mais tarde.
 
 1. Inicie o **Visual Studio Code**.
 
-    > &#128221; Se você ainda não estiver familiarizado com a interface do Visual Studio Code, examine o [Guia de introdução ao Visual Studio Code][code.visualstudio.com/docs/getstarted]
+    > &#128221: Se ainda não estiver familiarizado com a interface do Visual Studio Code, leia o [Guia de Introdução ao Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
 1. No **Visual Studio Code**, abra o menu **Terminal** e selecione **Novo Terminal** para abrir uma nova instância de terminal.
 
@@ -58,7 +58,7 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
     dotnet tool install cosmicworks --global --version 1.*
     ```
 
-    > &#128161; Este comando pode levar alguns minutos para ser concluído. Este comando gerará a mensagem de aviso (*A ferramenta "cosmicworks" já está instalada") se você já tiver instalado a versão mais recente dessa ferramenta no passado.
+    > &#128161; Esse comando poderá levar alguns minutos para ser concluído. Esse comando irá gerar a mensagem de aviso (*A ferramenta "cosmicworks" já está instalada) se você já tiver instalado a versão mais recente dessa ferramenta anteriormente.
 
 1. Execute o cosmicworks para propagar sua conta do Azure Cosmos DB com as seguintes opções de linha de comando:
 
@@ -72,9 +72,9 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
     cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
     ```
 
-    > &#128221; Por exemplo, se o ponto de extremidade for: **https&shy;://dp420.documents.azure.com:443/** e a sua chave for: **fDR2ci9QgkdkvERTQ==**, o comando será: ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
+    > &#128221; Por exemplo, se o seu ponto de extremidade for: **https&shy;://dp420.documents.azure.com:443/** e sua chave for: **fDR2ci9QgkdkvERTQ==**, o comando será: ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
-1. Aguarde até que o comando **cosmicworks** termine de preencher a conta com um banco de dados, um contêiner e itens.
+1. Aguarde até que o comando do **cosmicworks** termine de preencher a conta com um banco de dados, um contêiner e itens.
 
 1. Feche o terminal integrado.
 
@@ -92,7 +92,7 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
 
 1. No painel Do **Data Explorer**, selecione **Novo contêiner**.
 
-1. No item pop-up **Novo contêiner**, insira os seguintes valores para cada configuração e selecione **OK**:
+1. No pop-up **Novo Contêiner**, insira os seguintes valores para cada configuração e, a seguir, selecione **OK**:
 
     | **Configuração** | **Valor** |
     | --: | :-- |
@@ -121,7 +121,7 @@ Agora que os recursos do Azure Cosmos DB for NoSQL estão em vigor, você criar�
     | **Versão** | *V2* |
     | **Configuração do Git** | *Configurar o Git mais tarde* |
 
-    > &#128221; Seus ambientes de laboratório podem ter restrições que impedem a criação de um novo grupo de recursos. Se esse for o caso, use o grupo de recursos pré-criado existente.
+    > &#128221; Seus ambientes de laboratório podem ter restrições que impedem a criação de um novo grupo de recursos. Se for esse o caso, use o grupo de recursos pré-criado existente.
 
 1. Aguarde a conclusão da tarefa de implantação antes de continuar esta tarefa.
 

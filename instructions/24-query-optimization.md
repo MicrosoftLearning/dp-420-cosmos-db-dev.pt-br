@@ -12,9 +12,9 @@ Neste laboratório, usaremos o Data Explorer para testar consultas SQL com a pol
 
 ## Criar uma conta do Azure Cosmos DB for NoSQL
 
-O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que dá suporte a várias APIs. Ao provisionar uma conta do Azure Cosmos DB pela primeira vez, você irá selecionar a qual API você quer que a conta dê suporte (por exemplo, a **API do Mongo** ou a **API do NoSQL**). Quando o provisionamento da conta do Azure Cosmos DB for NoSQL estiver concluído, você poderá recuperar o ponto de extremidade e a chave e usá-los para se conectar à conta do Azure Cosmos DB for NoSQL usando o SDK do Azure para .NET ou qualquer outro SDK de sua escolha.
+O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que dá suporte a várias APIs. Ao provisionar uma conta do Azure Cosmos DB pela primeira vez, você irá selecionar a qual API você quer que a conta dê suporte (por exemplo, a **API do Mongo** ou a **API do NoSQL**). Quando o provisionamento da conta do Azure Cosmos DB for NoSQL estiver concluído, você poderá recuperar o ponto de extremidade e a chave e usá-los para se conectar à conta do Azure Cosmos DB for NoSQL usando o SDK do Azure para .NET ou qualquer outro SDK de sua escolha.
 
-1. Em uma nova janela ou guia do navegador da web, navegue até o portal do Azure (``portal.azure.com``).
+1. Em uma nova guia ou janela do navegador da web, navegue até o portal do Azure (``portal.azure.com``).
 
 1. Entre no portal usando as credenciais da Microsoft associadas à sua assinatura.
 
@@ -28,7 +28,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d�
     | **Localidade** | *Escolha qualquer região disponível* |
     | **Modo de capacidade** | *Sem servidor* |
 
-    > &#128221; Seus ambientes de laboratório podem ter restrições que impeçam você de criar um novo grupo de recursos. Se for esse o caso, use o grupo de recursos pré-criado existente.
+    > &#128221; Seus ambientes de laboratório podem ter restrições impedindo que você crie um novo grupo de recursos. Se for esse o caso, use o grupo de recursos pré-criado existente.
 
 1. Aguarde a conclusão da tarefa de implantação antes de continuar esta tarefa.
 
@@ -36,11 +36,11 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d�
 
 1. No painel **Data Explorer**, selecione **Novo Contêiner**.
 
-1. Na janela pop-up **Novo Contêiner**, insira os seguintes valores para cada configuração e selecione **OK**:
+1. No pop-up **Novo Contêiner**, insira os seguintes valores para cada configuração e, a seguir, selecione **OK**:
 
     | **Configuração** | **Valor** |
     | --: | :-- |
-    | **ID do banco de dados** | *Criar* &vert; *``cosmicworks``* |
+    | **ID do banco de dados** | *Criar novo* &vert; *``cosmicworks``* |
     | **ID do contêiner** | *``products``* |
     | **Chave de partição** | *``/categoryId``* |
 
@@ -48,7 +48,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d�
 
 1. Na folha de recursos, navegue até o painel **Chaves**.
 
-1. Este painel contém os detalhes da conexão e as credenciais necessárias para se conectar à conta do SDK. Especificamente:
+1. Esse painel contém os detalhes da conexão e as credenciais necessárias para se conectar à conta a partir do SDK. Especificamente:
 
     1. Aviso do campo **URI**. Você usará esse valor de **ponto de extremidade** posteriormente nesse exercício.
 
@@ -68,14 +68,14 @@ Você usará um utilitário de linha de comando que cria um banco de dados do **
     dotnet tool install cosmicworks --global --version 1.*
     ```
 
-    > &#128161; Este comando poderá levar alguns minutos para ser concluído. Esse comando irá gerar a mensagem de aviso (*A ferramenta "cosmicworks" já está instalada) se você já tiver instalado a versão mais recente dessa ferramenta anteriormente.
+    > &#128161; Esse comando poderá demorar alguns minutos para ser concluído. Esse comando irá gerar a mensagem de aviso (*A ferramenta "cosmicworks" já está instalada) se você já tiver instalado a versão mais recente dessa ferramenta anteriormente.
 
 1. Execute o cosmicworks para propagar sua conta do Azure Cosmos DB com as seguintes opções de linha de comando:
 
     | **Opção** | **Valor** |
     | ---: | :--- |
     | **--ponto de extremidade** | *O valor do ponto de extremidade copiado anteriormente nesse laboratório* |
-    | **--chave** | *O valor da chave que você copiou anteriormente nesse laboratório* |
+    | **--chave** | *O valor da chave copiado anteriormente nesse laboratório* |
     | **--conjuntos de dados** | *product* |
 
     ```
