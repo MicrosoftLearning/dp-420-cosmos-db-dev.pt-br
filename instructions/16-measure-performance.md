@@ -10,13 +10,13 @@ Neste exercício, você medirá a diferença das entidades de cliente quando voc
 
 ## Preparar seu ambiente de desenvolvimento
 
-Se você ainda não clonou o repositório de código de laboratório para **DP-420** no ambiente em que você está trabalhando neste laboratório, siga estas etapas para fazer isso. Caso contrário, abra a pasta clonada anteriormente no **Visual Studio Code**.
+Se você ainda não clonou o repositório de código do laboratório do **DP-420** para o ambiente no qual está trabalhando nesse laboratório, siga essas etapas para fazê-lo. Caso contrário, abra a pasta clonada anteriormente no **Visual Studio Code**.
 
 1. Inicie o **Visual Studio Code**.
 
     > &#128221; Se você ainda não se familiarizou com a interface do Visual Studio Code, confira o [Guia de introdução ao Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1. Abra a paleta de comandos e execute **Git: Clonar** para clonar o repositório GitHub ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` em uma pasta local de sua escolha.
+1. Abra a paleta de comandos e execute **Git: Clone** para clonar o repositório ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` do GitHub em uma pasta local de sua escolha.
 
     > &#128161; Você pode usar o atalho de teclado **CTRL+SHIFT+P** para abrir a paleta de comandos.
 
@@ -30,20 +30,26 @@ Se você ainda não clonou o repositório de código de laboratório para **DP-4
 
     > &#128161; Para abrir um terminal do **Git Bash**, no lado direito do menu do terminal, clique no menu suspenso ao lado do sinal **+** e escolha *Git Bash*.
 
-1. No **terminal do Git Bash**, execute os comandos a seguir. Os comandos abrem uma janela do navegador para conexão com o portal do Azure, em que você vai usar as credenciais de laboratório fornecidas, executar um script que cria uma conta do Azure Cosmos DB e, em seguida, compilar e iniciar o aplicativo que você usará para preencher o banco de dados e concluir os exercícios. *Depois de inserir a credencial fornecida para a conta do Azure, o build poderá levar de 15 a 20 minutos para ser concluído, portanto, talvez seja uma boa hora para tomar um café ou chá*.
+1. No **terminal do Git Bash**, execute os comandos a seguir. Os comandos abrem uma janela do navegador para se conectar ao portal do azure, onde você usará as credenciais de laboratório fornecidas.
 
     ```
     "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\python.exe" -m pip install pip-system-certs
     az login
     cd 16-measure-performance
-    bash init.sh
     dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+
+    ```
+    > &#128161; Se você executou o laboratório de **Custo de desnormalização de dados** primeiro e não removeu os recursos do Azure criados por esse laboratório, feche o terminal integrado, ignore a etapa a seguir e vá para a próxima seção. Observe que, se você já tiver os recursos criados pelo laboratório de **Custo de desnormalizar dados** e tentar executar o script abaixo, o script falhará.
+
+1. No **terminal do Git Bash**, execute os comandos a seguir. Os comandos executam um script que cria uma nova conta do Azure Cosmos DB e, em seguida, criam e iniciam o aplicativo que você usa para preencher o banco de dados e concluir os exercícios. *Depois de inserir a credencial fornecida para a conta do Azure, o build poderá levar de 15 a 20 minutos para ser concluído, portanto, talvez seja uma boa hora para tomar um café ou chá*.
+
+    ```
+    bash init.sh
     dotnet build
     dotnet run --load-data
     echo "Data load process completed."
 
     ```
-
 1. Feche o terminal integrado.
 
 ## Medir o desempenho de entidades em contêineres separados
@@ -140,5 +146,9 @@ Agora, vamos consultar as mesmas informações, mas com as entidades inseridas e
 Ao comparar as RU/s de cada consulta executada, você verá que a última consulta em que as entidades de cliente estão em um documento individual é muito menos cara do que o custo combinado da execução das três consultas de modo independente. A latência de retorno desses dados é menor porque os dados são retornados em uma só operação.
 
 Quando você pesquisar um item individual e souber a chave de partição e a ID dos dados, pode recuperar esses dados por meio de uma *leitura de ponto* chamando `ReadItemAsync()` no SDK do Azure Cosmos DB. Uma leitura de ponto é ainda mais rápida do que a consulta. Para os mesmos dados do cliente, o custo é de apenas 1 RU/s, o que é uma melhoria quase três vezes maior.
+
+## Limpar
+
+Exclua o Grupo de Recursos criado neste laboratório.  Se você não tiver acesso para remover o Grupo de Recursos, remova todos os objetos do Azure criados por este laboratório.
 
 [code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
