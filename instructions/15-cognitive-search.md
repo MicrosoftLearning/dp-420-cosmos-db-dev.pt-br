@@ -12,11 +12,11 @@ Nesse laboratório, você vai criar um índice da Pesquisa de IA do Azure que in
 
 ## Criar uma conta do Azure Cosmos DB for NoSQL
 
-O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que dá suporte a várias APIs. Ao provisionar uma conta do Azure Cosmos DB pela primeira vez, você irá selecionar a qual API você quer que a conta dê suporte (por exemplo, a **API do Mongo** ou a **API do NoSQL**). Após a conta do Azure Cosmos DB for NoSQL ter terminado de provisionar, você poderá recuperar o ponto de extremidade e a chave e usá-los para se conectar à conta do Azure Cosmos DB for NoSQL usando o SDK do Azure para .NET ou qualquer outro SDK de sua escolha.
+O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que dá suporte a várias APIs. Ao provisionar uma conta do Azure Cosmos DB pela primeira vez, você irá selecionar a qual API você quer que a conta dê suporte (por exemplo, a **API do Mongo** ou a **API do NoSQL**). Quando o provisionamento da conta do Azure Cosmos DB for NoSQL estiver concluído, você poderá recuperar o ponto de extremidade e a chave e usá-los para se conectar à conta do Azure Cosmos DB for NoSQL usando o SDK do Azure para .NET ou qualquer outro SDK de sua escolha.
 
 1. Em uma nova guia ou janela do navegador da web, navegue até o portal do Azure (``portal.azure.com``).
 
-1. Entre no portal usando as credenciais da Microsoft associada à sua assinatura.
+1. Entre no portal usando as credenciais da Microsoft associadas à sua assinatura.
 
 1. Selecione **+ Criar um recurso**, procure *Cosmos DB* e, em seguida, crie um novo recurso de conta do **Azure Cosmos DB for NoSQL** com as seguintes configurações, deixando todas as configurações restantes com seus valores padrão:
 
@@ -38,7 +38,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d
 
     1. Observe o campo **URI**. Você usará esse valor de **ponto de extremidade** posteriormente nesse exercício.
 
-    1. Observe o campo **PRIMARY KEY**. Você usará esse valor de **chave** posteriormente nesse exercício.
+    1. Observe o campo **CHAVE PRIMÁRIA**. Você usará esse valor de **chave** posteriormente nesse exercício.
 
     1. Observe o campo**PRIMARY CONNECTION STRING**. Você usará esse valor de **cadeia de conexão** posteriormente nesse exercício.
 
@@ -68,15 +68,15 @@ Você usará um utilitário de linha de comando que cria um banco de dados **cos
     dotnet tool install cosmicworks --global --version 1.*
     ```
 
-    > &#128161; Esse comando poderá demorar alguns minutos para ser concluído. Esse comando irá gerar a mensagem de aviso (* A ferramenta "cosmicworks" já está instalada) se você já tiver instalado a versão mais recente dessa ferramenta anteriormente.
+    > &#128161; Esse comando poderá demorar alguns minutos para ser concluído. Esse comando irá gerar a mensagem de aviso (*A ferramenta "cosmicworks" já está instalada) se você já tiver instalado a versão mais recente dessa ferramenta anteriormente.
 
 1. Execute o cosmicworks para propagar sua conta do Azure Cosmos DB com as seguintes opções de linha de comando:
 
     | **Opção** | **Valor** |
     | ---: | :--- |
-    | **--endpoint** | *O valor do ponto de extremidade copiado anteriormente nesse laboratório* |
-    | **--key** | *O valor da chave que você copiou anteriormente nesse laboratório* |
-    | **--datasets** | *product* |
+    | **--ponto de extremidade** | *O valor do ponto de extremidade copiado anteriormente nesse laboratório* |
+    | **--chave** | *O valor da chave copiado anteriormente nesse laboratório* |
+    | **--conjuntos de dados** | *product* |
 
     ```
     cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product

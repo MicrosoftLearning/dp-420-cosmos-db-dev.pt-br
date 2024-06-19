@@ -55,7 +55,7 @@ Antes de usar a CLI do Azure, primeiro você deve verificar a versão da CLI e f
     
     Este comando pode retornar vários nomes de grupo de recursos.
 
-1. (Opcional) ***Se nenhum grupo de recursos tiver sido criado para você***, escolha um nome de grupo de recursos e crie-o. *Lembre-se de que algumas configurações de laboratório podem ser bloqueadas e você precisará de um administrador para criar o grupo de recursos para você.*
+1. (Opcional) ***Se nenhum grupo de recursos tiver sido criado para você***, escolha um nome de grupo de recursos e crie-o. *Lembre-se de que alguns ambientes de laboratório podem estar bloqueados e você precisará de um administrador para criar o grupo de recursos para você.*
 
     i. Obter o nome de localização mais perto de você nesta lista
 

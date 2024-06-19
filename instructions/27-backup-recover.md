@@ -16,7 +16,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d�
 
 1. Em uma nova guia ou janela do navegador da web, navegue até o portal do Azure (``portal.azure.com``).
 
-1. Entre no portal usando as credenciais da Microsoft associada à sua assinatura.
+1. Entre no portal usando as credenciais da Microsoft associadas à sua assinatura.
 
 1. Selecione **+ Criar um recurso**, procure *Cosmos DB* e, em seguida, crie um novo recurso de conta do **Azure Cosmos DB for NoSQL** com as seguintes configurações, deixando todas as configurações restantes com seus valores padrão:
 

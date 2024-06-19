@@ -12,7 +12,7 @@ Neste laboratório, criaremos um programa orientado por menu que nos permitirá 
 
 ## Preparar seu ambiente de desenvolvimento
 
-Se você ainda não clonou o repositório de código de laboratório para **DP-420** no ambiente em que você está trabalhando neste laboratório, siga estas etapas para fazer isso. Caso contrário, abra a pasta clonada anteriormente no **Visual Studio Code**.
+Se você ainda não clonou o repositório de código do laboratório do **DP-420** para o ambiente no qual está trabalhando nesse laboratório, siga essas etapas para fazê-lo. Caso contrário, abra a pasta clonada anteriormente no **Visual Studio Code**.
 
 1. Inicie o **Visual Studio Code**.
 
@@ -26,7 +26,7 @@ Se você ainda não clonou o repositório de código de laboratório para **DP-4
 
 ## Criar uma conta do Azure Cosmos DB for NoSQL
 
-O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que dá suporte a várias APIs. Ao provisionar uma conta do Azure Cosmos DB pela primeira vez, você irá selecionar a quais APIs você quer que a conta dê suporte (por exemplo, a **API do Mongo** ou a **API do NoSQL**). Após a conta do Azure Cosmos DB for NoSQL ter concluído o provisionamento, você poderá recuperar o ponto de extremidade e a chave. Use o ponto de extremidade e a chave para se conectar à conta do Azure Cosmos DB for NoSQL programaticamente. Use o ponto de extremidade e a chave nas cadeias de conexão do SDK do Azure para .NET ou qualquer outro SDK.
+O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que dá suporte a várias APIs. Ao provisionar uma conta do Azure Cosmos DB pela primeira vez, você irá selecionar a quais APIs você quer que a conta dê suporte (por exemplo, a **API do Mongo** ou a **API do NoSQL**). Após a conta do Azure Cosmos DB for NoSQL ter concluído o provisionamento, você poderá recuperar o ponto de extremidade e a chave. Use o ponto de extremidade e a chave para se conectar à conta do Azure Cosmos DB for NoSQL programaticamente. Use o ponto de extremidade e a chave nas cadeias de conexão do SDK do Azure para .NET ou qualquer outro SDK.
 
 1. Em uma nova guia ou janela do navegador da web, navegue até o portal do Azure (``portal.azure.com``).
 
