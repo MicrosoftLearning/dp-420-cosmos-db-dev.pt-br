@@ -1,6 +1,6 @@
 ---
 lab:
-  title: Examine a política de índice padrão para um contêiner do Azure Cosmos DB for NoSQL com o portal
+  title: Configurar uma política de índice de contêiner do Azure Cosmos DB for NoSQL usando o SDK
   module: Module 6 - Define and implement an indexing strategy for Azure Cosmos DB for NoSQL
 ---
 
