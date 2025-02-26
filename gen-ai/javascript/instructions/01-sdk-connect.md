@@ -1,11 +1,7 @@
 ---
-title: 01 – Conectar-se ao Azure Cosmos DB for NoSQL com o SDK
 lab:
   title: 01 – Conectar-se ao Azure Cosmos DB for NoSQL com o SDK
   module: Use the Azure Cosmos DB for NoSQL SDK
-layout: default
-nav_order: 4
-parent: JavaScript SDK labs
 ---
 
 # Conectar-se ao Azure Cosmos DB for NoSQL com o SDK
@@ -16,11 +12,11 @@ Neste laboratório, você se conectará a uma conta do Azure Cosmos DB for NoSQL
 
 ## Preparar seu ambiente de desenvolvimento
 
-Se você ainda não clonou o repositório de código do laboratório para **Criar copilotos com o Azure Cosmos DB** e configurou seu ambiente local, veja as instruções de como [Configurar o ambiente de laboratório local](00-setup-lab-environment.md) para fazer isso.
+Se você ainda não clonou o repositório de código do laboratório para **Criar copilotos com o Azure Cosmos DB** e configurou seu ambiente local, veja as instruções de como [Configurar o ambiente de laboratório local](00-setup-lab-environment.md).
 
 ## Criar uma conta do Azure Cosmos DB for NoSQL
 
-Se você já criou uma conta do Azure Cosmos DB for NoSQL para os laboratórios **Criar copilotos com o Azure Cosmos DB** neste site, poderá usá-la para este laboratório e pular para a [próxima seção](#import-the-azurecosmos-library). Caso contrário, veja as instruções de como [Configurar o Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) para criar uma conta do Azure Cosmos DB for NoSQL que você usará em todos os módulos de laboratório e conceda acesso à identidade do usuário para gerenciar dados na conta atribuindo-os à função de **Colaborador de dados internos do Cosmos DB**.
+Se você já criou uma conta do Azure Cosmos DB for NoSQL para os laboratórios **Criar copilotos com o Azure Cosmos DB** neste site, poderá usá-la para este laboratório e pular para a [próxima seção](#import-the-azurecosmos-library). Caso contrário, veja as instruções de como [Configurar o Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) para criar uma conta do Azure Cosmos DB for NoSQL que você usará em todos os módulos de laboratório e conceda acesso à identidade do usuário para gerenciar dados na conta atribuindo a função de **Colaborador de Dados Internos do Cosmos DB**.
 
 ## Importar a biblioteca @azure/cosmos
 
@@ -32,7 +28,7 @@ A biblioteca **@azure/cosmos** está disponível no **npm** para facilitar a ins
 
     > &#128221; Esse comando abrirá o terminal com o diretório inicial já definido para a pasta **javascript/01-sdk-connect**
 
-1. Inicializar um novo projeto de Node.js:
+1. Inicializar um novo projeto Node.js:
 
     ```bash
     npm init -y
