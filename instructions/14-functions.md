@@ -8,7 +8,7 @@ lab:
 
 O gatilho do Azure Cosmos DB para o Azure Functions é implementado usando um processador de feed de alterações. Com esse conhecimento, você pode criar funções que respondam às operações de criar e atualizar no contêiner do Azure Cosmos DB for NoSQL. Se você implementou um processador de feed de alterações manualmente, a configuração do Azure Functions será semelhante.
 
-Neste laboratório, você vai:
+Neste laboratório, você criará um aplicativo de funções e todos os seus recursos necessários que monitora o seu banco de dados e gera informações de log para cada operação detectada nele.
 
 ## Criar uma conta do Azure Cosmos DB for NoSQL
 
@@ -115,7 +115,7 @@ Agora você deve conseguir monitorar sua função de aplicativo.
 
 Antes de poder começar a escrever código, você precisará criar o recurso do Azure Functions e respectivos recursos dependentes (Application Insights, Armazenamento) usando o assistente de criação.
 
-1. Selecione **+ Criar um recurso**, procure *Funções* e, a seguir, crie um novo recurso de conta do **Aplicativo de Funções** com as configurações a seguir, deixando todas as configurações restantes com seus valores padrão:
+1. Selecione **+ Criar um recurso**, pesquise *Funções* e crie um novo recurso de conta do **Aplicativo de Funções**. Selecione **Consumo** como opção de hospedagem e configure o aplicativo com as seguintes configurações, deixando todas as configurações restantes com os valores padrão:
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
@@ -124,25 +124,22 @@ Antes de poder começar a escrever código, você precisará criar o recurso do 
     | **Nome** | *Insira um nome globalmente exclusivo* |
     | **Publicar** | *Código* |
     | **Pilha de runtime** | *.NET* |
-    | **Versão** | *6 (LTS) em processo* |
+    | **Versão** | *8 (LTS) Em processo* |
     | **Região** | *Escolha qualquer região disponível* |
     | **Conta de armazenamento** | *Criar uma nova conta de armazenamento* |
 
     > &#128221; Seus ambientes de laboratório podem ter restrições que impeçam você de criar um novo grupo de recursos. Se for esse o caso, use o grupo de recursos pré-criado existente.
 
-1. Aguarde a conclusão da tarefa de implantação antes de continuar essa tarefa.
+1. Aguarde a conclusão da tarefa de implantação antes de continuar com essa tarefa.
 
-1. Vá para o recurso de conta do **Azure Functions** recém-criado e navegue até o painel **Funções**.
-
-1. No painel **Funções**, selecione **+ Criar**.
+1. Vá para o recurso de conta do **Azure Functions** recém-criado e, na página de visão geral, selecione **Criar função**.
 
 1. No pop-up **Criar função**, crie uma nova função com as configurações a seguir, deixando todas as configurações restantes com seus valores padrão:
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
-    | **Ambiente de desenvolvimento** | *Desenvolvimento no portal* |
     | **Selecionar um modelo** | *Gatilho do Azure Cosmos DB* |
-    | **Nova Função** | *``ItemsListener``* |
+    | **Nome da função** | *``ItemsListener``* |
     | **Conexão da conta do Cosmos DB** | *Selecione Nova* &vert; *Selecione Conta do Azure Cosmos DB* &vert; *Selecione a conta do Azure Cosmos DB que você criou anteriormente* |
     | **Nome do banco de dados** | *``cosmicworks``* |
     | **Nome da coleção** | *``products``* |
@@ -153,9 +150,7 @@ Antes de poder começar a escrever código, você precisará criar o recurso do 
 
 A função que você criou anteriormente é um script em C# editado dentro do portal. Agora você usará o portal para escrever uma função curta que irá gerar o identificador exclusivo de qualquer item inserido ou atualizado no contêiner.
 
-1. No painel **ItemsListener** &vert; **Função**, navegue até o painel **Código + Teste**.
-
-1. No editor do script **run.csx**, exclua o conteúdo da área do editor.
+1. No painel **ItemsListener**&vert;**Codificar + Testar**, navegue até o editor do script **run.csx** e exclua o conteúdo.
 
 1. Na área do editor, faça referência à biblioteca ** Microsoft.Azure.DocumentDB.Core**:
 
@@ -223,7 +218,7 @@ A função que você criou anteriormente é um script em C# editado dentro do po
     }
     ```
 
-1. Expanda a seção **Logs** para se conectar aos logs de fluxo da função atual.
+1. Expanda a seção **Logs** na parte inferior da página, expanda os **Logs do App Insights** e selecione **Logs do Sistema de Arquivos** para se conectar aos logs de streaming da função atual.
 
     > &#128161; Pode levar alguns segundos para você se conectar ao serviço de log de fluxo. Você verá uma mensagem na saída do log quando estiver conectado.
 

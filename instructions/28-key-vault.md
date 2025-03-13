@@ -214,7 +214,7 @@ O resto do código é muito direto: obter a cadeia de conexão, conectar-se ao A
 
 1. Selecione um Grupo de Recursos existente ou crie um novo, se necessário.
 
-1. Selecione **.NET 6 (LTS)**.
+1. Selecione **.NET 8 (LTS)**.
 
 1. Selecione **Windows**.
 

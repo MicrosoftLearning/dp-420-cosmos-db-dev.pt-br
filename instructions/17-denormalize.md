@@ -37,7 +37,6 @@ Se você ainda não clonou o repositório de código do laboratório do **DP-420
     ```
     "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\python.exe" -m pip install pip-system-certs
     az login
-    cd 17-denormalize
     dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
     ```
 
@@ -103,6 +102,8 @@ Em seguida, consulte o contêiner de produtos para obter todos os produtos da ca
 
     ![Captura de tela do Data Explorer do Azure Cosmos DB que mostra os resultados da consulta para o contêiner de produtos.](media/16-product-results.png)
 
+   > **Observação**: você pode observar uma cobrança de solicitação um pouco diferente da relatada neste exercício, dentro de uma faixa de +/- 0,1.
+
 ### Consultar as marcas de cada produto
 
 Em seguida, consulte o contêiner productTag três vezes, uma para cada um dos três produtos: Headset de HL, Headset de LL e Headset de ML.
@@ -139,7 +140,7 @@ Em seguida, execute uma consulta para retornar as marcas para Headset de LL.
 
     Essa consulta retorna as cinco marcas para o produto Headset LL.
 
-1. Selecione a guia **Estatísticas de Consulta** e anote o preço da solicitação de 3,45 RUs.
+1. Selecione a guia **Estatísticas de Consulta** e anote o preço da solicitação de 3,47 RUs.
 
     ![Captura de tela dos resultados da consulta para o contêiner de marcas do produto para as estatísticas de consulta de Headset de LL.](media/16-product-tag-ll-stats.png)
 
@@ -157,7 +158,7 @@ Por fim, execute uma consulta para retornar as marcas para Headset de ML.
 
     Essa consulta retorna as três marcas do produto Headset de ML.
 
-1. Selecione a guia **Estatísticas de Consulta** e anote o preço da solicitação de 3,19 RUs.
+1. Selecione a guia **Estatísticas de Consulta** e anote o preço da solicitação de 3,2 RUs.
 
     ![Captura de tela dos resultados da nossa consulta para o contêiner de marcas do produto para estatísticas de consulta de Headset de ML.](media/16-product-tag-ml-stats.png)
 
@@ -170,9 +171,9 @@ Agora, vamos somar todos os custos de RU de cada uma das consultas executadas.
 |Nome da categoria|2.92|
 |Product|2.89|
 |Marcas de produto de HL|3,06|
-|Marcas de produto de LL|3.45|
-|Marcas de produto de ML|3,19|
-|**Custo total de RU**|**15.51**|
+|Marcas de produto de LL|3.47|
+|Marcas de produto de ML|3,20|
+|**Custo total de RU**|**15,54**|
 
 ### Executar as mesmas consultas para o seu design NoSQL
 

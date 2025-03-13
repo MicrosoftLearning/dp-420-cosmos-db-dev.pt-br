@@ -33,7 +33,7 @@ Antes de usar a CLI do Azure, primeiro você deve verificar a versão da CLI e f
 1. Instale os certificados tls/ssl antes de fazer logon no Azure:
 
     ```
-    CD "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\"
+    cd "C:\Program Files\Microsoft SDKs\Azure\CLI2\"
     .\python.exe -m pip install pip-system-certs
     ```
 
@@ -57,7 +57,7 @@ Antes de usar a CLI do Azure, primeiro você deve verificar a versão da CLI e f
 
 1. (Opcional) ***Se nenhum grupo de recursos tiver sido criado para você***, escolha um nome de grupo de recursos e crie-o. *Lembre-se de que alguns ambientes de laboratório podem estar bloqueados e você precisará de um administrador para criar o grupo de recursos para você.*
 
-    i. Obter o nome de localização mais perto de você nesta lista
+    i. Obter o nome da localização mais próxima de você nesta lista
 
     ```
     az account list-locations --query "sort_by([].{YOURLOCATION:name, DisplayName:regionalDisplayName}, &YOURLOCATION)" --output table
@@ -74,7 +74,7 @@ O grupo de comandos **cosmosdb** contém comandos básicos para criar e gerencia
 
 1. Retorne à instância do terminal já aberta no **Visual Studio Code**.
 
-1. Exiba a maioria dos comandos da CLI do Azure relacionados ao **Azure Cosmos DB** usando o seguinte comando:
+1. Exiba os comandos mais comuns da CLI do Azure relacionados ao **Azure Cosmos DB** usando o seguinte comando:
 
     ```
     az cosmosdb --help
@@ -131,7 +131,7 @@ O grupo de comandos **cosmosdb sql** contém comandos para gerenciar recursos es
 
 1. Retorne à instância do terminal já aberta no **Visual Studio Code**.
 
-1. Exiba a maioria dos grupos de comandos da CLI do Azure relacionados ao **Azure Cosmos DB for NoSQL** usando o seguinte comando:
+1. Exiba os grupos de comandos mais comuns da CLI do Azure relacionados ao **Azure Cosmos DB for NoSQL** usando o seguinte comando:
 
     ```
     az cosmosdb sql --help
