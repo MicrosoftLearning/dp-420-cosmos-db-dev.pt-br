@@ -18,8 +18,6 @@ Há alguns provedores de recursos que devem ser registrados em sua assinatura do
 
 1. Selecione sua assinatura do Azure.
 
-    > &#128221; Se você tiver várias assinaturas, selecione a que você criou resgatando o Azure Pass.
-
 1. Na folha de sua assinatura, na seção**Configurações**, selecione **Provedores de recursos**.
 
 1. Na lista de provedores de recursos, verifique se os seguintes provedores estão registrados:
