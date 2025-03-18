@@ -1,11 +1,7 @@
 ---
-title: Habilitar provedores de recursos
 lab:
   title: Habilitar provedores de recursos
   module: Setup
-layout: default
-nav_order: 2
-parent: Common setup instructions
 ---
 
 # Habilitar provedores de recursos do Azure
@@ -21,8 +17,6 @@ Há alguns provedores de recursos que devem ser registrados em sua assinatura do
     > &#128161; Alternativamente; expanda o **&#8801;** menu, selecione **Todos os Serviços** e, na categoria **Todos**, selecione **Assinaturas**.
 
 1. Selecione sua assinatura do Azure.
-
-    > &#128221; Se você tiver várias assinaturas, selecione a que você criou resgatando o Azure Pass.
 
 1. Na folha de sua assinatura, na seção**Configurações**, selecione **Provedores de recursos**.
 
