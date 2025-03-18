@@ -1,11 +1,7 @@
 ---
-title: 06 – Paginar resultados de consultas entre produtos com o SDK do Azure Cosmos DB for NoSQL
 lab:
   title: 06 – Paginar resultados de consultas entre produtos com o SDK do Azure Cosmos DB for NoSQL
   module: Author complex queries with the Azure Cosmos DB for NoSQL
-layout: default
-nav_order: 9
-parent: Python SDK labs
 ---
 
 # Paginar resultados de consultas entre produtos com o SDK do Azure Cosmos DB for NoSQL
@@ -16,11 +12,11 @@ Neste laboratório, você criará um iterador de feed que pode ser usado em um l
 
 ## Preparar seu ambiente de desenvolvimento
 
-Se você ainda não clonou o repositório de código do laboratório para **Criar copilotos com o Azure Cosmos DB** e configurou seu ambiente local, veja as instruções de como [Configurar o ambiente de laboratório local](00-setup-lab-environment.md) para fazer isso.
+Se você ainda não clonou o repositório de código do laboratório para **Criar copilotos com o Azure Cosmos DB** e configurou seu ambiente local, veja as instruções de como [Configurar o ambiente de laboratório local](00-setup-lab-environment.md).
 
 ## Criar uma conta do Azure Cosmos DB for NoSQL
 
-Se você já criou uma conta do Azure Cosmos DB for NoSQL para o laboratório **Criar copilotos com o Azure Cosmos DB** neste site, poderá usá-la para este laboratório e pular para a [próxima seção](#create-azure-cosmos-db-database-and-container-with-sample-data). Caso contrário, veja as instruções de como [Configurar o Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) para criar uma conta do Azure Cosmos DB for NoSQL que você usará em todos os módulos de laboratório e conceda acesso à identidade do usuário para gerenciar dados na conta atribuindo-os à função de **Colaborador de dados internos do Cosmos DB**.
+Se você já criou uma conta do Azure Cosmos DB for NoSQL para os laboratórios **Criar copilotos com o Azure Cosmos DB** neste site, poderá usá-la para este laboratório e pular para a [próxima seção](#create-azure-cosmos-db-database-and-container-with-sample-data). Caso contrário, veja as instruções de como [Configurar o Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) para criar uma conta do Azure Cosmos DB for NoSQL que você usará em todos os módulos de laboratório e conceda acesso à identidade do usuário para gerenciar dados na conta atribuindo-os à função de **Colaborador de dados internos do Cosmos DB**.
 
 ## Criar um banco de dados e um contêiner do Azure Cosmos DB com dados de amostra
 

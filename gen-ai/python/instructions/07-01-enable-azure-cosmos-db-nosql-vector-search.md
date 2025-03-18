@@ -1,11 +1,7 @@
 ---
-title: 07.1 – Habilitar a busca em vetores do Azure Cosmos DB for NoSQL
 lab:
   title: 07.1 – Habilitar a busca em vetores do Azure Cosmos DB for NoSQL
   module: Build copilots with Python and Azure Cosmos DB for NoSQL
-layout: default
-nav_order: 10
-parent: Python SDK labs
 ---
 
 # Habilitar a busca em vetores do Azure Cosmos DB for NoSQL
@@ -16,7 +12,7 @@ Neste laboratório, você criará uma conta do Azure Cosmos DB for NoSQL e habil
 
 ## Preparar seu ambiente de desenvolvimento
 
-Se você ainda não clonou o repositório de código do laboratório para **Criar copilotos com o Azure Cosmos DB** e configurou seu ambiente local, veja as instruções de como [Configurar o ambiente de laboratório local](00-setup-lab-environment.md) para fazer isso.
+Se você ainda não clonou o repositório de código do laboratório para **Criar copilotos com o Azure Cosmos DB** e configurou seu ambiente local, veja as instruções de como [Configurar o ambiente de laboratório local](00-setup-lab-environment.md).
 
 ## Criar uma conta do Azure Cosmos DB for NoSQL
 

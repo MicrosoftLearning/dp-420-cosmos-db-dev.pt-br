@@ -1,11 +1,7 @@
 ---
-title: 01 – Conectar-se ao Azure Cosmos DB for NoSQL com o SDK
 lab:
   title: 01 – Conectar-se ao Azure Cosmos DB for NoSQL com o SDK
   module: Use the Azure Cosmos DB for NoSQL SDK
-layout: default
-nav_order: 4
-parent: Python SDK labs
 ---
 
 # Conectar-se ao Azure Cosmos DB for NoSQL com o SDK
@@ -16,7 +12,7 @@ Neste laboratório, você se conectará a uma conta do Azure Cosmos DB for NoSQL
 
 ## Preparar seu ambiente de desenvolvimento
 
-Se você ainda não clonou o repositório de código do laboratório para **Criar copilotos com o Azure Cosmos DB** e configurou seu ambiente local, veja as instruções de como [Configurar o ambiente de laboratório local](00-setup-lab-environment.md) para fazer isso.
+Se você ainda não clonou o repositório de código do laboratório para **Criar copilotos com o Azure Cosmos DB** e configurou seu ambiente local, veja as instruções de como [Configurar o ambiente de laboratório local](00-setup-lab-environment.md).
 
 ## Criar uma conta do Azure Cosmos DB for NoSQL
 
