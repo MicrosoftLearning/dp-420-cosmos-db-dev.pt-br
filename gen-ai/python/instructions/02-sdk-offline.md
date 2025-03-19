@@ -1,11 +1,7 @@
 ---
-title: 02 – Configurar o SDK do Python do Azure Cosmos DB for NoSQL para desenvolvimento offline
 lab:
-  title: 02 – Configurar o SDK do Python do Azure Cosmos DB for NoSQL para desenvolvimento offline
+  title: 02 – Configurar o SDK do Azure Cosmos DB JavaScript para desenvolvimento offline
   module: Configure the Azure Cosmos DB for NoSQL SDK
-layout: default
-nav_order: 5
-parent: Python SDK labs
 ---
 
 # Configurar o SDK do Python do Azure Cosmos DB for NoSQL para desenvolvimento offline

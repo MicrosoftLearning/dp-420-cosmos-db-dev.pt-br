@@ -1,11 +1,7 @@
 ---
-title: 07.2 – Gerar incorporações de vetores com o OpenAI do Azure e armazená-las no Azure Cosmos DB for NoSQL
 lab:
   title: 07.2 – Gerar incorporações de vetores com o OpenAI do Azure e armazená-las no Azure Cosmos DB for NoSQL
   module: Build copilots with Python and Azure Cosmos DB for NoSQL
-layout: default
-nav_order: 11
-parent: Python SDK labs
 ---
 
 # Gerar incorporações de vetores com o OpenAI do Azure e armazená-las no Azure Cosmos DB for NoSQL
