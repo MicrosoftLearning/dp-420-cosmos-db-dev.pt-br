@@ -42,6 +42,8 @@ Se você ainda não clonou o repositório de código do laboratório do **DP-420
 
     > &#128161; Se você executou o laboratório de **Desempenho da medida para entidades de cliente** primeiro e não removeu os recursos do Azure criados por esse laboratório, feche o terminal integrado, ignore a etapa a seguir e vá para a próxima seção. Observe que, se você já tiver os recursos criados pelo laboratório de **Desempenho da medida para entidades de cliente** e tentar executar o script abaixo, o script falhará.
 
+    > &#128221; Se você estiver usando a Camada Gratuita do Cosmos DB para este laboratório, precisará atualizar o arquivo ***azuredeploy.json*** e alterar a taxa de transferência de 4000 para 1000 para todos os bancos de dados e contêineres.
+
 1. No **terminal do Git Bash**, execute os comandos a seguir. Os comandos executam um script que cria uma nova conta do Azure Cosmos DB e, em seguida, criam e iniciam o aplicativo que você usa para preencher o banco de dados e concluir os exercícios. *Depois de inserir a credencial fornecida para a conta do Azure, o build poderá levar de 15 a 20 minutos para ser concluído, portanto, talvez seja uma boa hora para tomar um café ou chá*.
 
     ```

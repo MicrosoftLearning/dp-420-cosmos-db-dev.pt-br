@@ -1,11 +1,7 @@
 ---
-title: 04 – Agrupar várias operações de pontos com o SDK do Azure Cosmos DB for NoSQL
 lab:
   title: 04 – Agrupar várias operações de pontos com o SDK do Azure Cosmos DB for NoSQL
   module: Perform cross-document transactional operations with the Azure Cosmos DB for NoSQL
-layout: default
-nav_order: 7
-parent: Python SDK labs
 ---
 
 # Agrupar várias operações de pontos com o SDK do Azure Cosmos DB for NoSQL
@@ -16,7 +12,7 @@ Neste laboratório, você usará o SDK do Python para executar operações em lo
 
 ## Preparar seu ambiente de desenvolvimento
 
-Se você ainda não clonou o repositório de código do laboratório para **Criar copilotos com o Azure Cosmos DB** e configurou seu ambiente local, veja as instruções de como [Configurar o ambiente de laboratório local](00-setup-lab-environment.md) para fazer isso.
+Se você ainda não clonou o repositório de código do laboratório para **Criar copilotos com o Azure Cosmos DB** e configurou seu ambiente local, veja as instruções de como [Configurar o ambiente de laboratório local](00-setup-lab-environment.md).
 
 ## Criar uma conta do Azure Cosmos DB for NoSQL
 
