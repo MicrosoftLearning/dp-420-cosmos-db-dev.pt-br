@@ -1,11 +1,7 @@
 ---
-title: Ambiente de laboratório de instalação
 lab:
   title: Ambiente de laboratório de instalação
   module: Setup
-layout: default
-nav_order: 2
-parent: JavaScript SDK labs
 ---
 
 # Configuração do ambiente de laboratório local
