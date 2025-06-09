@@ -36,6 +36,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
@@ -51,9 +52,11 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d
 
 1. Esse painel contém os detalhes da conexão e as credenciais necessárias para se conectar à conta a partir do SDK. Especificamente:
 
-    1. Observe o campo **URI**. Você usará esse valor de **ponto de extremidade** posteriormente nesse exercício.
+    1. Observe o campo **URI**. Você usará esse valor de **ponto de extremidade** mais adiante neste exercício.
 
-    1. Observe o campo **CHAVE PRIMÁRIA**. Você usará esse valor de **chave** posteriormente neste exercício.
+    1. Observe o campo **CHAVE PRIMÁRIA**. Você usará esse valor de **chave**posteriormente neste exercício.
+
+    1. Observe o campo**PRIMARY CONNECTION STRING**. Você usará esse valor de **cadeia de conexão** posteriormente nesse exercício.
 
 1. Sem fechar a janela do navegador, abra o **Visual Studio Code**.
 
@@ -66,7 +69,7 @@ A ferramenta de linha de comando [cosmicworks][nuget.org/packages/cosmicworks] i
 1. Instale a ferramenta de linha de comando [cosmicworks][nuget.org/packages/cosmicworks] para uso global em seu computador.
 
     ```
-    dotnet tool install cosmicworks --global --version 1.*
+    dotnet tool install --global CosmicWorks --version 2.3.1
     ```
 
     > &#128161; Esse comando poderá levar alguns minutos para ser concluído. Esse comando irá gerar a mensagem de aviso (*A ferramenta "cosmicworks" já está instalada) se você já tiver instalado a versão mais recente dessa ferramenta anteriormente.
@@ -75,15 +78,14 @@ A ferramenta de linha de comando [cosmicworks][nuget.org/packages/cosmicworks] i
 
     | **Opção** | **Valor** |
     | ---: | :--- |
-    | **--ponto de extremidade** | *O valor do ponto de extremidade copiado anteriormente nesse laboratório* |
-    | **--chave** | *O valor da chave copiado anteriormente nesse laboratório* |
-    | **--conjuntos de dados** | *product* |
+    | **-c** | *O valor da cadeia de conexão que você verificou anteriormente neste laboratório* |
+    | **--number-of-employees** | *O comando cosmicworks preenche o banco de dados com contêineres de funcionários e produtos com 1000 e 200 itens, respectivamente, a menos que especificado de outra forma* |
 
-    ```
-    cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
+    ```powershell
+    cosmicworks -c "connection-string" --number-of-employees 0 --disable-hierarchical-partition-keys
     ```
 
-    > &#128221; Por exemplo, se o seu ponto de extremidade for: **https&shy;://dp420.documents.azure.com:443/** e sua chave for: **fDR2ci9QgkdkvERTQ==**, o comando será: ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
+    > &#128221; Por exemplo, se o seu ponto de extremidade for: **https&shy;://dp420.documents.azure.com:443/** e sua chave for: **fDR2ci9QgkdkvERTQ==**, o comando será: ``cosmicworks -c "AccountEndpoint=https://dp420.documents.azure.com:443/;AccountKey=fDR2ci9QgkdkvERTQ==" --number-of-employees 0 --disable-hierarchical-partition-keys``
 
 1. Aguarde até que o comando do **cosmicworks** termine de preencher a conta com um banco de dados, um contêiner e itens.
 
@@ -164,7 +166,7 @@ A classe [Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.contai
 
     Database database = await client.CreateDatabaseIfNotExistsAsync("cosmicworks");
 
-    Container container = await database.CreateContainerIfNotExistsAsync("products", "/categoryId");
+    Container container = await database.CreateContainerIfNotExistsAsync("products", "/category/name");
 
     UserDefinedFunctionProperties props = new ();
     props.Id = "tax";

@@ -101,7 +101,7 @@ A biblioteca **Microsoft.Azure.Cosmos** já foi pré-instalada no script do .NET
 1. Adicione o pacote [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] do NuGet usando o seguinte comando:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
 1. Crie e execute o projeto usando o comando [executar dotnet][docs.microsoft.com/dotnet/core/tools/dotnet-run]:
@@ -132,10 +132,10 @@ A criação de um novo contêiner é semelhante ao padrão usado para criar um n
 
 1. Abra o arquivo de código **script.cs** dentro da pasta **05-sdk-offline** novamente.
 
-1. Invoque de forma assíncrona o método [CreateContainerIfNotExistsAsync][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync] da variável de **banco de dados** que passa o nome do novo contêiner (**produtos**), o caminho da chave de partição (**/categoryId**) e a taxa de transferência (**400**) que você deseja criar no banco de dados **cosmicworks** e armazenar o resultado em uma variável do tipo [Contêiner][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container]:
+1. Invoque de maneira assíncrona o método [CreateContainerIfNotExistsAsync][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync] da variável **database**, transmitindo o nome do novo contêiner (**products**), o caminho da chave de partição (**/category/name**) e a taxa de transferência (**400**) que você deseja criar no banco de dados **cosmicworks**, além de armazenar o resultado em uma variável do tipo [Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container]:
 
     ```
-    Container container = await database.CreateContainerIfNotExistsAsync("products", "/categoryId", 400);
+    Container container = await database.CreateContainerIfNotExistsAsync("products", "/category/name", 400);
     ```
 
 1. Use o método estático interno **Console.WriteLine** para imprimir a propriedade [ID][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.id] da classe Container com um cabeçalho intitulado **Novo contêiner**:
@@ -157,7 +157,7 @@ A criação de um novo contêiner é semelhante ao padrão usado para criar um n
     Database database = await client.CreateDatabaseIfNotExistsAsync("cosmicworks");
     Console.WriteLine($"New Database:\tId: {database.Id}");
     
-    Container container = await database.CreateContainerIfNotExistsAsync("products", "/categoryId", 400);
+    Container container = await database.CreateContainerIfNotExistsAsync("products", "/category/name", 400);
     Console.WriteLine($"New Container:\tId: {container.Id}");
     ```
 

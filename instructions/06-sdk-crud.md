@@ -36,6 +36,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
@@ -70,7 +71,7 @@ Usando as credenciais da conta recém-criada, você se conectará às classes do
 1. Adicione o pacote [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] do NuGet usando o seguinte comando:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
 1. Crie o projeto usando o comando [dotnet build][docs.microsoft.com/dotnet/core/tools/dotnet-build]:

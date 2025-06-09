@@ -36,6 +36,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
@@ -112,7 +113,7 @@ O SDK do .NET contém um conjunto de classes relacionadas à classe [Microsoft.A
 1. Crie uma nova variável do tipo [ContainerProperties][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.containerproperties] chamada **opções** passando os valores ``products`` e ``/categoryId`` como parâmetros de construtor:
 
     ```
-    ContainerProperties options = new ("products", "/categoryId");
+    ContainerProperties options = new ("products", "/category/name");
     ```
 
 1. Atribua a variável de **política** à propriedade [IndexingPolicy][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.containerproperties.indexingpolicy] da variável **opções**:
@@ -156,7 +157,7 @@ O SDK do .NET contém um conjunto de classes relacionadas à classe [Microsoft.A
         new IncludedPath{ Path = "/name/?" }
     );
 
-    ContainerProperties options = new ("products", "/categoryId");
+    ContainerProperties options = new ("products", "/category/name");
     options.IndexingPolicy = policy;
 
     Container container = await database.CreateContainerIfNotExistsAsync(options);
@@ -189,9 +190,9 @@ Assim como acontece com qualquer outra política de indexação, você pode usar
 
 1. No recurso de conta do **Azure Cosmos DB**, navegue até o painel do **Data Explorer**.
 
-1. No **Data Explorer**, expanda o nó do banco de dados **cosmicworks** e observe o nó de contêiner de novos **produtos** dentro da árvore de navegação da **API NOSQL**.
+1. No **Data Explorer**, expanda o nó do banco de dados **cosmicworks** e observe o novo nó do contêiner **products** dentro da árvore de navegação **API NoSQL**.
 
-1. No nó de contêiner de **produtos** da árvore de navegação da **API NOSQL**, selecione **Escala e configurações**.
+1. No nó do contêiner de **produtos** da árvore de navegação da **API NOSQL**, selecione **Configurações**.
 
 1. Observe a política de indexação na seção **Política de indexação**:
 

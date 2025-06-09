@@ -22,6 +22,7 @@ Os procedimentos armazenados são criados em JavaScript integrado à linguagem e
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |

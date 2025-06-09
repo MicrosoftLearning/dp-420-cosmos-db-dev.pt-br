@@ -36,6 +36,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
@@ -87,7 +88,7 @@ A CLI do .NET inclui um comando [add package][docs.microsoft.com/dotnet/core/too
 1. Adicione o pacote [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos] do NuGet usando o seguinte comando:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.*
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
 1. Feche o terminal integrado.

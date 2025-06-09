@@ -30,6 +30,7 @@ Vamos começar de forma simples, criando uma conta sem servidor. Não há muito 
 
     | **Configuração** | **Valor** |
     | --: | :-- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | **Use a assinatura do Azure que você já tem.** *Todos os recursos precisam pertencer a um grupo de recursos. Cada grupo de recursos precisa pertencer a uma assinatura.* |
     | **Grupo de Recursos** | **Use um grupo de recursos existente ou crie um grupo de recursos.** *Todos os recursos precisam pertencer a um grupo de recursos.*|
     | **Account Name** |  **Insira qualquer nome globalmente exclusivo.** *O nome da conta globalmente exclusivo. Esse nome será usado como parte do endereço DNS para solicitações.  O portal verificará o nome em tempo real.* |
@@ -64,7 +65,7 @@ Vamos começar de forma simples, criando uma conta sem servidor. Não há muito 
     | --: | :-- |
     | **ID do banco de dados** | *Usar existente* &vert; *cosmicworks* |
     | **ID do contêiner** | *`products`* |
-    | **Chave de partição** | *`/categoryId`* |
+    | **Chave de partição** | *`/category/name`* |
 
 1. De volta ao painel do **Data Explorer**, expanda o nó do banco de dados **cosmicworks** e observe o nó de contêiner de **produtos** dentro da hierarquia.
 
@@ -86,6 +87,7 @@ Agora, vamos criar uma conta de taxa de transferência provisionada com opções
 
     | **Configuração** | **Valor** |
     | --: | :-- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | **Use a assinatura do Azure que você já tem.** *Todos os recursos precisam pertencer a um grupo de recursos. Cada grupo de recursos precisa pertencer a uma assinatura.* |
     | **Grupo de Recursos** | **Use um grupo de recursos existente ou crie um grupo de recursos.** *Todos os recursos precisam pertencer a um grupo de recursos.*|
     | **Account Name** |  **Insira qualquer nome globalmente exclusivo.** *O nome da conta globalmente exclusivo. Esse nome será usado como parte do endereço DNS para solicitações.  O portal verificará o nome em tempo real.* |
