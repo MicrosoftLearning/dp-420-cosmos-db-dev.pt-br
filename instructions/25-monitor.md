@@ -36,6 +36,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d�
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
@@ -69,21 +70,21 @@ A CLI do .NET inclui um comando [add package][docs.microsoft.com/dotnet/core/too
 
     > &#128221; Este comando abrirá o terminal com o diretório inicial já definido como a pasta **25-monitor**.
 
-1. Adicione o pacote [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] do NuGet usando o seguinte comando:
+1. Adicione o pacote [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.49.0] do NuGet usando o seguinte comando:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
-1. Adicione o pacote [Newtonsoft.Json][nuget.org/packages/Newtonsoft.Json/13.0.1] do NuGet usando o seguinte comando:
+1. Adicione o pacote [Newtonsoft.Json][nuget.org/packages/Newtonsoft.Json/13.0.3] do NuGet usando o seguinte comando:
 
     ```
-    dotnet add package Newtonsoft.Json --version 13.0.1
+    dotnet add package Newtonsoft.Json --version 13.0.3
     ```
 
 ## Executar um script para criar os contêineres e a carga de trabalho
 
-Agora estamos prontos para executar uma carga de trabalho para monitorar o uso da conta do Azure Cosmos DB.  O script que vamos executar, nos bastidores. Esse script criará três contêineres e carregará alguns dados neles. Em seguida, o script executará algumas consultas SQL aleatoriamente para emular vários aplicativos de usuário que atingem a conta do Azure Cosmos DB. 
+Agora estamos prontos para executar uma carga de trabalho para monitorar o uso da conta do Azure Cosmos DB.  O script que vamos executar, nos bastidores. Esse script criará três contêineres e carregará alguns dados neles. Em seguida, o script executará algumas consultas SQL aleatoriamente para emular vários aplicativos de usuário que atingem a conta do Azure Cosmos DB.
 
 1. No **Visual Studio Code**, no painel do **Explorer**, navegue até a pasta **25-monitor**.
 

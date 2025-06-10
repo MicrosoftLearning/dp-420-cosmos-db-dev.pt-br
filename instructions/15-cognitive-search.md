@@ -22,11 +22,13 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
     | **Localidade** | *Escolha qualquer região disponível* |
-    | **Modo de capacidade** | *Sem servidor* |
+    | **Modo de capacidade** | *Taxa de transferência provisionada* |
+    | **Aplicar Desconto na Camada Gratuita** | *Não Aplicar* |
 
     > &#128221; Seus ambientes de laboratório podem ter restrições impedindo que você crie um novo grupo de recursos. Se for esse o caso, use o grupo de recursos pré-criado existente.
 
@@ -36,13 +38,22 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d
 
 1. Esse painel contém os detalhes da conexão e as credenciais necessárias para se conectar à conta a partir do SDK. Especificamente:
 
-    1. Observe o campo **URI**. Você usará esse valor de **ponto de extremidade** posteriormente nesse exercício.
-
-    1. Observe o campo **CHAVE PRIMÁRIA**. Você usará esse valor de **chave** posteriormente nesse exercício.
-
     1. Observe o campo**PRIMARY CONNECTION STRING**. Você usará esse valor de **cadeia de conexão** posteriormente nesse exercício.
 
 1. Selecione **Data Explorer** no menu de recursos.
+
+1. No painel do **Data Explorer**, expanda **Novo contêiner** e, a seguir, selecione **Novo Banco de Dados**.
+
+1. No pop-up de **Novo Banco de Dados**, insira os seguintes valores para cada configuração e, a seguir, selecione **OK**:
+
+    | **Configuração** | **Valor** |
+    | --: | :-- |
+    | **ID do banco de dados** | *``cosmicworks``* |
+    | **Taxa de transferência de provisionamento** | Habilitado |
+    | **Taxa de transferência do banco de dados** | **Manual** |
+    | **RU/s necessárias para o banco de dados** | ``1000`` |
+
+1. De volta ao painel do **Data Explorer**, observe o nó de banco de dados do **cosmicworks** dentro da hierarquia.
 
 1. No painel do **Data Explorer**, selecione **Novo Contêiner**.
 
@@ -50,9 +61,9 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d
 
     | **Configuração** | **Valor** |
     | --: | :-- |
-    | **ID do banco de dados** | *Criar novo* &vert; *``cosmicworks``* |
+    | **ID do banco de dados** | *Usar existente* &vert; *cosmicworks* |
     | **ID do contêiner** | *``products``* |
-    | **Chave de partição** | *``/categoryId``* |
+    | **Chave de partição** | *``/category/name``* |
 
 1. De volta ao painel do **Data Explorer**, expanda o nó do banco de dados do **cosmicworks** e observe o nó do contêiner de **produtos** dentro da hierarquia.
 
@@ -65,7 +76,7 @@ Você usará um utilitário de linha de comando que cria um banco de dados **cos
 1. Instale a ferramenta de linha de comando [cosmicworks][nuget.org/packages/cosmicworks] para uso global no seu computador.
 
     ```
-    dotnet tool install cosmicworks --global --version 1.*
+    dotnet tool install --global CosmicWorks --version 2.3.1
     ```
 
     > &#128161; Esse comando poderá demorar alguns minutos para ser concluído. Esse comando irá gerar a mensagem de aviso (*A ferramenta "cosmicworks" já está instalada) se você já tiver instalado a versão mais recente dessa ferramenta anteriormente.
@@ -74,15 +85,14 @@ Você usará um utilitário de linha de comando que cria um banco de dados **cos
 
     | **Opção** | **Valor** |
     | ---: | :--- |
-    | **--ponto de extremidade** | *O valor do ponto de extremidade copiado anteriormente nesse laboratório* |
-    | **--chave** | *O valor da chave copiado anteriormente nesse laboratório* |
-    | **--conjuntos de dados** | *product* |
+    | **-c** | *O valor da cadeia de conexão que você verificou anteriormente neste laboratório* |
+    | **--number-of-employees** | *O comando cosmicworks preenche o banco de dados com contêineres de funcionários e produtos com 1000 e 200 itens, respectivamente, a menos que especificado de outra forma* |
 
-    ```
-    cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
+    ```powershell
+    cosmicworks -c "connection-string" --number-of-employees 0 --disable-hierarchical-partition-keys
     ```
 
-    > &#128221; Por exemplo, se o seu ponto de extremidade for: **https&shy;://dp420.documents.azure.com:443/** e sua chave for: **fDR2ci9QgkdkvERTQ==**, o comando será: ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
+    > &#128221; Por exemplo, se o seu ponto de extremidade for: **https&shy;://dp420.documents.azure.com:443/** e sua chave for: **fDR2ci9QgkdkvERTQ==**, o comando será: ``cosmicworks -c "AccountEndpoint=https://dp420.documents.azure.com:443/;AccountKey=fDR2ci9QgkdkvERTQ==" --number-of-employees 0 --disable-hierarchical-partition-keys``
 
 1. Aguarde até que o comando do **cosmicworks** termine de preencher a conta com um banco de dados, um contêiner e itens.
 
@@ -135,7 +145,7 @@ Você criará um indexador que indexa um subconjunto de dados em um contêiner e
     ```sql
     SELECT 
         p.id, 
-        p.categoryId, 
+        p.category, 
         p.name, 
         p.price,
         p._ts
@@ -167,7 +177,7 @@ Você criará um indexador que indexa um subconjunto de dados em um contêiner e
     | **Campo** | **Recuperável** | **Filtrável** | **Classificável** | **Com faceta** | **Pesquisável** |
     | ---: | :---: | :---: | :---: | :---: | :---: |
     | **id** | &#10004; | &#10004; | &#10004; | | |
-    | **categoryId** | &#10004; | &#10004; | &#10004; | &#10004; | |
+    | **category** | &#10004; | &#10004; | &#10004; | &#10004; | |
     | **name** | &#10004; | &#10004; | &#10004; | | &#10004; (Inglês — Microsoft) |
     | **price** | &#10004; | &#10004; | &#10004; | &#10004; | |
 

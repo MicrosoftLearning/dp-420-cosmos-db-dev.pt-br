@@ -34,6 +34,7 @@ Se você ainda não clonou o repositório de código do laboratório do **DP-420
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
@@ -95,10 +96,10 @@ Se você ainda não clonou o repositório de código do laboratório do **DP-420
 
     > &#128221; Esse comando abrirá o terminal com o diretório inicial já definido como a pasta **08-sdk-bulk**.
 
-1. Adicione o pacote [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] do NuGet usando o seguinte comando:
+1. Adicione o pacote Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.49.0] do NuGet usando o seguinte comando:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
 1. Crie o projeto usando o comando [dotnet build][docs.microsoft.com/dotnet/core/tools/dotnet-build]:

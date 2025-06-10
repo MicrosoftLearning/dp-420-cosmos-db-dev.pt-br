@@ -24,6 +24,7 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
@@ -40,9 +41,7 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
 
 1. Esse painel contém os detalhes da conexão e as credenciais necessárias para se conectar à conta a partir do SDK. Especificamente:
 
-    1. Observe o campo **URI**. Você usará esse valor de **ponto de extremidade** posteriormente nesse exercício.
-
-    1. Observe o campo **CHAVE PRIMÁRIA**. Você usará este valor de **chave** posteriormente neste exercício.
+    1. Observe o campo**PRIMARY CONNECTION STRING**. Você usará esse valor de **cadeia de conexão** posteriormente nesse exercício.
 
 1. Mantenha a guia do navegador aberta, pois retornaremos a ela mais tarde.
 
@@ -54,8 +53,8 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
 
 1. Instale a ferramenta de linha de comando [cosmicworks][nuget.org/packages/cosmicworks] para uso global em seu computador.
 
-    ```
-    dotnet tool install cosmicworks --global --version 1.*
+    ```powershell
+    dotnet tool install --global CosmicWorks --version 2.3.1
     ```
 
     > &#128161; Esse comando poderá levar alguns minutos para ser concluído. Esse comando irá gerar a mensagem de aviso (*A ferramenta "cosmicworks" já está instalada) se você já tiver instalado a versão mais recente dessa ferramenta anteriormente.
@@ -64,15 +63,14 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
 
     | **Opção** | **Valor** |
     | ---: | :--- |
-    | **--endpoint** | *O valor do ponto de extremidade que você verificou anteriormente neste laboratório* |
-    | **--key** | *O valor da chave que você verificou anteriormente neste laboratório* |
-    | **--datasets** | *product* |
+    | **-c** | *O valor da cadeia de conexão que você verificou anteriormente neste laboratório* |
+    | **--number-of-employees** | *O comando cosmicworks preenche o banco de dados com contêineres de funcionários e produtos com 1000 e 200 itens, respectivamente, a menos que especificado de outra forma* |
 
-    ```
-    cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
+    ```powershell
+    cosmicworks -c "connection-string" --number-of-employees 0 --disable-hierarchical-partition-keys
     ```
 
-    > &#128221; Por exemplo, se o seu ponto de extremidade for: **https&shy;://dp420.documents.azure.com:443/** e sua chave for: **fDR2ci9QgkdkvERTQ==**, o comando será: ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
+    > &#128221; Por exemplo, se o seu ponto de extremidade for: **https&shy;://dp420.documents.azure.com:443/** e sua chave for: **fDR2ci9QgkdkvERTQ==**, o comando será: ``cosmicworks -c "AccountEndpoint=https://dp420.documents.azure.com:443/;AccountKey=fDR2ci9QgkdkvERTQ==" --number-of-employees 0 --disable-hierarchical-partition-keys``
 
 1. Aguarde até que o comando do **cosmicworks** termine de preencher a conta com um banco de dados, um contêiner e itens.
 
@@ -88,9 +86,9 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
 
 1. Observe e selecione os vários itens JSON no contêiner de **produtos**. Esses são os itens criados pela ferramenta de linha de comando usada nas etapas anteriores.
 
-1. Selecione o nó **Escala e configurações**. Na guia **Escala e configurações**, selecione **Manual**, atualize a configuração de **taxa de transferência necessária**56 de **4000 RU/s** para **400 RU/s** e **salve** suas alterações**.
+1. Selecione o nó **Escala**. Na guia **Escala**, selecione **Manual**, atualize a configuração de **taxa de transferência necessária** de **4000 RU/s** para **400 RU/s** e clique em **Salvar** para salvar as alterações**.
 
-1. No painel Do **Data Explorer**, selecione **Novo contêiner**.
+1. No painel do **Data Explorer**, selecione **Novo Contêiner**.
 
 1. No pop-up **Novo Contêiner**, insira os seguintes valores para cada configuração e, a seguir, selecione **OK**:
 
@@ -99,8 +97,6 @@ Para acompanhar o contêiner de produtos, você criará manualmente um contêine
     | **ID do banco de dados** | *Usar existente* &vert; *cosmicworks* |
     | **ID do contêiner** | *`flatproducts`* |
     | **Chave de partição** | *`/category`* |
-    | **Taxa de transferência do contêiner (escala automática)** | *Manual* |
-    | **RU/s** | *`400`* |
 
 1. De volta ao painel do **Data Explorer**, expanda o nó do banco de dados **cosmicworks** e observe o nó de contêiner **flatproducts** dentro da hierarquia.
 
@@ -119,9 +115,8 @@ Agora que os recursos do Azure Cosmos DB for NoSQL estão em vigor, você criar�
     | **Nome** | *Insira um nome globalmente exclusivo* |
     | **Região** | *Escolha qualquer região disponível* |
     | **Versão** | *V2* |
-    | **Configuração do Git** | *Configurar o Git mais tarde* |
 
-    > &#128221; Seus ambientes de laboratório podem ter restrições que impedem a criação de um novo grupo de recursos. Se for esse o caso, use o grupo de recursos pré-criado existente.
+    > &#128221; Seus ambientes de laboratório podem ter restrições impedindo que você crie um novo grupo de recursos. Se for esse o caso, use o grupo de recursos pré-criado existente.
 
 1. Aguarde a conclusão da tarefa de implantação antes de continuar esta tarefa.
 

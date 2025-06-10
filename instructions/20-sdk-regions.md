@@ -36,6 +36,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
@@ -126,7 +127,7 @@ Usando as credenciais da conta recém-criada, você irá se conectar com as clas
 
 1. Abra o arquivo de código **script.cs** dentro da pasta **20-sdk-regions**.
 
-    > &#128221; A biblioteca **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** já foi importada do NuGet previamente.
+    > &#128221; A biblioteca **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.49.0]** já foi importada do NuGet previamente.
 
 1. Localize a variável **cadeia de caracteres** denominada **ponto de extremidade**. Defina seu valor como o **ponto de extremidade** da conta do Azure Cosmos DB criado anteriormente.
   

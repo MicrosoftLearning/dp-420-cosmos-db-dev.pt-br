@@ -22,9 +22,9 @@ Idealmente, você deve concluir esses laboratórios em um ambiente de laboratór
 
 1. Instale a versão mais recente do Microsoft Edge do [microsoft.com/edge].
 
-### SDK do .NET 6
+### SDK do .NET 8
 
-1. Baixe e instale o SDK (não o runtime) de [dotnet.microsoft.com/download/dotnet/6.0].
+1. Baixe e instale o SDK (não o runtime) em [dotnet.microsoft.com/download/dotnet/8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 
 ### PowerShell 7
 

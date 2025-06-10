@@ -8,7 +8,7 @@ lab:
 
 O Azure Cosmos DB oferece um amplo conjunto de códigos de resposta, que nos ajudam a solucionar facilmente problemas que podem surgir com nossos diferentes tipos de operação. O problema é garantir que programemos o tratamento adequado de erros ao criar aplicativos para o Azure Cosmos DB.
 
-Neste laboratório, criaremos um programa orientado por menu que nos permitirá inserir ou excluir um de dois documentos. O principal objetivo deste laboratório é nos apresentar como usar alguns dos códigos de resposta mais comuns e como usá-los no código de tratamento de erros do nosso aplicativo.  Embora codifiquemos o tratamento de erros para vários códigos de resposta, só acionaremos dois tipos diferentes de condições.  Além disso, o tratamento de erros não fará nada complexo, dependendo do código de resposta, exibirá uma mensagem na tela ou aguardará 10 segundos e repetirá a operação mais uma vez. 
+Neste laboratório, criaremos um programa orientado por menu que nos permitirá inserir ou excluir um de dois documentos. O principal objetivo deste laboratório é nos apresentar como usar alguns dos códigos de resposta mais comuns e como usá-los no código de tratamento de erros do nosso aplicativo.  Embora codifiquemos o tratamento de erros para vários códigos de resposta, só acionaremos dois tipos diferentes de condições.  Além disso, o tratamento de erros não fará nada complexo, dependendo do código de resposta, exibirá uma mensagem na tela ou aguardará 10 segundos e repetirá a operação mais uma vez.
 
 ## Preparar seu ambiente de desenvolvimento
 
@@ -36,6 +36,7 @@ O Azure Cosmos DB é um serviço de banco de dados NoSQL baseado em nuvem que d�
 
     | **Configuração** | **Valor** |
     | ---: | :--- |
+    | **Tipo de carga de trabalho** | **Aprendizado** |
     | **Assinatura** | *Sua assinatura existente do Azure* |
     | **Grupo de recursos** | *Selecionar um grupo de recursos existente ou criar um novo* |
     | **Account Name** | *Insira um nome globalmente exclusivo* |
@@ -68,10 +69,10 @@ A CLI do .NET inclui um comando [adicionar pacote][docs.microsoft.com/dotnet/cor
 
     > &#128221; Esse comando abrirá o terminal com o diretório inicial já definido para a pasta **26-sdk-troubleshoot**.
 
-1. Adicione o pacote [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] do NuGet usando o seguinte comando:
+1. Adicione o pacote Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.49.0] do NuGet usando o seguinte comando:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
 ## Execute um script para criar opções orientadas por menu para inserir e excluir documentos.
